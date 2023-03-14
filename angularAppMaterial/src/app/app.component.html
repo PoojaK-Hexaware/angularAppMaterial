@@ -1,0 +1,157 @@
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened>
+    <p><img src="/assets/img/CHAMP-Logo.png" alt="image" class="img-dim"></p>
+    <h3 class="sidebar-title">Booking</h3>
+    <mat-list>
+      <mat-list-item (click)="onSearchClick()">
+        <span matListItemTitle>Search</span>
+      </mat-list-item>
+      <mat-list-item (click)="onCreateClick()">
+        <span matListItemTitle>Create</span>
+      </mat-list-item>
+    </mat-list>
+    
+  </mat-drawer>
+  
+  <mat-drawer-content [style.display]="searchFlag ? 'block' : 'none'">
+    <div class="mat-elevation-z8">
+      <div class="row" style="font-size: 10px;">
+        <div class="col">
+          <mat-label class="matlabelProp">AWB Prefix</mat-label>
+          <mat-form-field appearance="outline" >
+            <input matInput  placeholder="" #input>
+          </mat-form-field>
+    
+          <mat-label class="matlabelProp">Origin</mat-label>
+          <mat-form-field appearance="outline">
+            <input matInput  placeholder="" #input>
+          </mat-form-field>
+    
+          <mat-label class="matlabelProp">Id</mat-label>
+          <mat-form-field appearance="outline">
+            <input matInput  placeholder="" #input>
+          </mat-form-field>
+
+          <button mat-flat-button color="primary">Search</button>
+
+          <mat-label class="matlabelProp">Handler Id</mat-label>
+          <mat-form-field appearance="outline">
+            <input matInput  placeholder="" #input>
+          </mat-form-field>
+
+        </div>
+       
+      </div>
+     
+      <div class="row" style="font-size: 10px;">
+        <div class="col">
+          <mat-label class="matlabelProp">AWB Serial</mat-label>
+          <mat-form-field appearance="outline" >
+            <input matInput  placeholder="" #input>
+          </mat-form-field>
+
+          <mat-label class="matlabelProp">Destination</mat-label>
+          <mat-form-field appearance="outline"  >
+            <input matInput  placeholder="" #input >
+          </mat-form-field>
+
+      <mat-label class="matlabelProp">Agent</mat-label>
+      <mat-form-field appearance="outline">
+        <input matInput  placeholder="" #input  >
+      </mat-form-field>
+      <button mat-flat-button color="primary">Check rates</button>
+        </div>
+        
+      </div>
+      
+      <br><br>
+      <table mat-table [dataSource]="dataSource" matSort #empTbSort="matSort">
+    
+        <!-- Position Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+    
+        <!-- Name Column -->
+        <ng-container matColumnDef="AWB_prefix">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> AWB Prefix </th>
+          <td mat-cell *matCellDef="let element"> {{element.AWB_prefix}} </td>
+        </ng-container>
+    
+        
+        <ng-container matColumnDef="isMaster">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Is Master </th>
+          <td mat-cell *matCellDef="let element"> {{element.isMaster}} </td>
+        </ng-container>
+    
+       
+        <ng-container matColumnDef="AWB_ServiceType">
+          <th mat-header-cell *matHeaderCellDef > AWB Service type </th>
+          <td mat-cell *matCellDef="let element"> {{element.AWB_ServiceType}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="AWB_Serial">
+          <th mat-header-cell *matHeaderCellDef > AWB Serial </th>
+          <td mat-cell *matCellDef="let element"> {{element.AWB_Serial}} </td>
+        </ng-container>
+    
+       
+        <ng-container matColumnDef="issueCarrier">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Issue Carrier </th>
+          <td mat-cell *matCellDef="let element"> {{element.issueCarrier}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="origin">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Origin </th>
+          <td mat-cell *matCellDef="let element"> {{element.origin}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="destination">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Destination</th>
+          <td mat-cell *matCellDef="let element"> {{element.destination}} </td>
+        </ng-container>
+    
+       
+        <ng-container matColumnDef="agent">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Agent </th>
+          <td mat-cell *matCellDef="let element"> {{element.agent}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="area">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Area </th>
+          <td mat-cell *matCellDef="let element"> {{element.area}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="totalWeight">
+          <th mat-header-cell *matHeaderCellDef >Total Weight</th>
+          <td mat-cell *matCellDef="let element"> {{element.totalWeight}} </td>
+        </ng-container>
+    
+       
+        <ng-container matColumnDef="totalChargableWeight">
+          <th mat-header-cell *matHeaderCellDef > Total Chargable Weight </th>
+          <td mat-cell *matCellDef="let element"> {{element.totalChargableWeight}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="totalVolume">
+          <th mat-header-cell *matHeaderCellDef > Total Volume </th>
+          <td mat-cell *matCellDef="let element"> {{element.totalVolume}} </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                     showFirstLastButtons
+                     hidePageSize="true"
+                     aria-label="Select page of periodic elements">
+      </mat-paginator>
+    </div>
+    
+  </mat-drawer-content>
+  <mat-drawer-content [style.display]="!searchFlag ? 'block' : 'none'">
+    
+  </mat-drawer-content>
+</mat-drawer-container>
