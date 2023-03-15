@@ -16,6 +16,8 @@ import { AppSearchComponent } from './search/app-search.component';
 import { AppCreateComponent } from './create/app-create.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatIconModule} from '@angular/material/icon';
+import { AppSearchService } from './shared/services/app-search.service';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,9 +37,12 @@ import {MatIconModule} from '@angular/material/icon';
     MatButtonModule,
     MatSortModule,
     MatGridListModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    AppSearchService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
