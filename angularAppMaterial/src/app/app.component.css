@@ -1,10 +1,39 @@
 .example-container {
     width: inherit;
-    height: 800px;
-    margin: 10px;
-    border: 1px solid #555;
+    height: 100vh;
+    overflow-y: auto;
   }
-
+  .mat-drawer-content{
+    overflow-x: hidden;
+    margin-left:180px!important;
+  }
+  .mat-drawer{
+    width:180px;
+  }
+  ::ng-deep .mat-mdc-form-field{
+    margin-right:10px;
+  }
+  ::ng-deep .mat-mdc-text-field-wrapper{
+    height:45px!important;
+  }
+  ::ng-deep .mat-mdc-form-field .mat-mdc-floating-label.mdc-floating-label{
+    top: 22px !important;;
+  }
+  ::ng-deep .mat-mdc-form-field .mat-mdc-floating-label.mdc-floating-label.mdc-floating-label--float-above{
+    top:28px!important;
+  }
+  .mat-mdc-list-item{
+    height: 30px!important;
+    padding-left: 25px;
+    cursor: pointer!important;
+  }
+  ::ng-deep .mdc-data-table__header-cell{
+    white-space: nowrap;
+  }
+  ::ng-deep .mat-elevation-z8{
+    box-shadow:none!important;
+    padding:15px;
+  }
   .img-dim{
     width: 60px;
     height: 60px;
@@ -28,30 +57,5 @@
   th.mat-sort-header-sorted {
     color: black;
   }
-
- 
-
-.matlabelProp{
-  margin: 10px 10px 10px 10px;
-}
-
-::ng-deep .mat-form-field-appearance-outline .mat-mdc-text-field-wrapper {
-  border-radius: 0px;
-  height: 20px;
-  width: 50%;
-}
-
-::ng-deep .mat-mdc-form-field{
-  padding-top: 10px;
-}
-
-::ng-deep .mat-mdc-unelevated-button.mat-mdc-button-base{
-  height: 20px;
-}
-
-::ng-deep .mat-mdc-unelevated-button .mdc-button__label{
-  font-size: x-small;
-}
-
 
 

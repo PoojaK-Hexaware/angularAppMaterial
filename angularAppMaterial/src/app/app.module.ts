@@ -14,6 +14,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSortModule} from '@angular/material/sort';
 import { AppSearchComponent } from './search/app-search.component';
 import { AppCreateComponent } from './create/app-create.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatIconModule} from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +33,9 @@ import { AppCreateComponent } from './create/app-create.component';
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
-    MatSortModule 
+    MatSortModule,
+    MatGridListModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

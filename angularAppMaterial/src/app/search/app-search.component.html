@@ -1,60 +1,58 @@
 <div class="mat-elevation-z8">
-    <div class="row" style="font-size: 10px;">
-        <div class="col" style="display: flex;">
-          <mat-label class="matlabelProp">Handler Id</mat-label>
-        <mat-form-field appearance="outline">
-          <input matInput  placeholder="" #input>
-        </mat-form-field>
+
+    <div style="display:flex;padding-top:50px;flex-wrap: wrap;">
+      <div style="display:flex;align-items: center;flex-wrap:wrap;">
+        <div style="display: flex;flex-direction:column">
+          <div>
+            <mat-form-field appearance="outline">
+              <mat-label>AWB Prefix</mat-label>
+              <input matInput placeholder="">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Origin</mat-label>
+              <input matInput placeholder="">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>ID</mat-label>
+              <input matInput placeholder="">
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field appearance="outline">
+              <mat-label>AWB Serial</mat-label>
+              <input matInput placeholder="">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Destination</mat-label>
+              <input matInput placeholder="">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Agent</mat-label>
+              <input matInput placeholder="">
+            </mat-form-field>
+          </div>
         </div>
-    </div>
-    <div class="row" style="font-size: 10px;">
-      <div class="col" style="display: flex;">
-        <mat-label class="matlabelProp">AWB Prefix</mat-label>
-        <mat-form-field appearance="outline" >
-          <input matInput  placeholder="" #input>
-        </mat-form-field>
-  
-        <mat-label class="matlabelProp">Origin</mat-label>
-        <mat-form-field appearance="outline">
-          <input matInput  placeholder="" #input>
-        </mat-form-field>
-  
-        <mat-label class="matlabelProp">Id</mat-label>
-        <mat-form-field appearance="outline">
-          <input matInput  placeholder="" #input>
-        </mat-form-field>
-
-        <button mat-flat-button color="primary">Search</button>
-
-        
-
+        <div style="margin-left:30px;">
+          <button mat-raised-button color="primary">Search</button>
+        </div>
       </div>
-     
-    </div>
-   
-    <div class="row" style="font-size: 10px;">
-      <div class="col" style="display: flex;">
-        <mat-label class="matlabelProp">AWB Serial</mat-label>
-        <mat-form-field appearance="outline" >
-          <input matInput  placeholder="" #input>
+      <div style="margin-left:auto;display:flex;flex-direction:column;">
+        <mat-form-field appearance="outline">
+          <mat-label>Handler ID</mat-label>
+          <input matInput placeholder="">
         </mat-form-field>
-
-        <mat-label class="matlabelProp">Destination</mat-label>
-        <mat-form-field appearance="outline"  >
-          <input matInput  placeholder="" #input >
-        </mat-form-field>
-
-    <mat-label class="matlabelProp">Agent</mat-label>
-    <mat-form-field appearance="outline">
-      <input matInput  placeholder="" #input  >
-    </mat-form-field>
-    <button mat-flat-button color="primary">Check rates</button>
+        <button mat-raised-button color="primary">Check Rates</button>
       </div>
-      
     </div>
-    
-    <br><br>
-    <table mat-table [dataSource]="dataSource" matSort #empTbSort="matSort" style="border: groove;margin: 10px 100px 10px 10px;">
+    <br>
+    <div style="display: flex;">
+      <div style="margin-left:auto;cursor:pointer;    display: flex;
+      align-items: center;
+      padding: 20px 0;
+      font-size: 13px;">Download <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="download"></mat-icon>
+      </div></div>
+    <div class="data">
+    <table mat-table [dataSource]="dataSource" matSort #empTbSort="matSort">
   
       <!-- Position Column -->
       <ng-container matColumnDef="id">
@@ -131,6 +129,7 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
+  </div>
   
     <mat-paginator [pageSizeOptions]="[5, 10, 20]"
                    showFirstLastButtons

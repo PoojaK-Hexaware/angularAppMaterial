@@ -6,6 +6,7 @@ import {MatSort, Sort} from '@angular/material/sort';
   selector: 'app-app-search',
   templateUrl: './app-search.component.html',
   styleUrls: []
+  
 })
 export class AppSearchComponent implements AfterViewInit{
   displayedColumns: string[] = ['id', 'AWB_prefix', 'isMaster', 'AWB_ServiceType','AWB_Serial','issueCarrier','origin','destination','agent','area','totalWeight','totalChargableWeight','totalVolume'];
