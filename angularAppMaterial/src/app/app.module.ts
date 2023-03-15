@@ -12,9 +12,13 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSortModule} from '@angular/material/sort';
+import { AppSearchComponent } from './search/app-search.component';
+import { AppCreateComponent } from './create/app-create.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AppSearchComponent,
+    AppCreateComponent
   ],
   imports: [
     BrowserModule,

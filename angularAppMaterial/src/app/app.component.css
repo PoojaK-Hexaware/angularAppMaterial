@@ -21,7 +21,8 @@
 
   table {
     width: 100%;
-    font-size: smaller;
+    font-size: 5px;
+    padding: 0.75em 0.75em 0 0.75em;
   }
   
   th.mat-sort-header-sorted {
@@ -34,14 +35,8 @@
   margin: 10px 10px 10px 10px;
 }
 
-
-
-/* ::ng-deep .mat-form-field-appearance-outline .mat-mdc-text-field-wrapper {
-  background-color: #fff;
-} */
 ::ng-deep .mat-form-field-appearance-outline .mat-mdc-text-field-wrapper {
   border-radius: 0px;
-  /* padding: 0.75em 0.75em 0 0.75em; */
   height: 20px;
   width: 50%;
 }
@@ -57,5 +52,6 @@
 ::ng-deep .mat-mdc-unelevated-button .mdc-button__label{
   font-size: x-small;
 }
+
 
 
