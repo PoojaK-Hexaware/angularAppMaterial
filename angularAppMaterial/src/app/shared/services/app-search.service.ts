@@ -15,4 +15,8 @@ export class AppSearchService {
     .pipe(map(res => res));
   }
  
+  searchById(searchId: any): Observable<any>{
+    return this._http.get(this.API_URL+"/listdemosita?id="+searchId)
+    .pipe(map(res => res));
+  }
 }
